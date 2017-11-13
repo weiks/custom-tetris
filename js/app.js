@@ -48,9 +48,10 @@ Game.App = function() {
 	this._dom.play.focus();
 
 window.onQuartersCallback = function(data){
-	console.log("here");
+	console.log(data.txId);
+    if (data.txId != undefined) {
         document.getElementById('play').click();
-
+}
 }
 }
 Game.App.prototype.handleEvent = function(e) {
