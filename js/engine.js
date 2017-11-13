@@ -146,7 +146,7 @@ Game.Engine.prototype._computeScore = function(removed) {
 
 Game.Engine.prototype._setPlaying = function(playing) {
 	this._status.playing = playing;
-	document.querySelector("#status").innerHTML = (playing ? "Playing" : "GAME OVER");
+	document.querySelector("#status").innerHTML = (playing ? "Playing" : 'GAME OVER<br/><button onclick="location.reload();">Replay</button>');
 }
 
 Game.Engine.prototype._start = function() {

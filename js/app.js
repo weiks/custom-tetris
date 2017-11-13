@@ -46,8 +46,13 @@ Game.App = function() {
 	this._dom.connect.addEventListener("click", this);
 	this._dom.play.addEventListener("click", this);
 	this._dom.play.focus();
-}
 
+window.onQuartersCallback = function(data){
+	console.log("here");
+        document.getElementById('play').click();
+
+}
+}
 Game.App.prototype.handleEvent = function(e) {
 	switch (e.type) {
 		case "change":
@@ -62,14 +67,13 @@ Game.App.prototype.handleEvent = function(e) {
 				break;
 
 				case this._dom.play:
-					this._dom.setup.classList.add("playing");
-					setTimeout(this._start.bind(this), 500);
+        				this._dom.setup.classList.add("playing");
+        				setTimeout(this._start.bind(this), 500);
 				break;
 			}
 		break;
 	}
 }
-
 Game.App.prototype._connect = function() {
 	this._dom.connect.disabled = true;
 	var server = this._dom.server.value;
@@ -230,4 +234,3 @@ Game.App.prototype._createBackground = function() {
 	piece.xy = new XY(1, 5);
 	piece.build(this._dom.setup);
 }
-
